@@ -4,6 +4,7 @@ import './App.css';
 import Child from './child';
 import PureChild from './pure-child'
 import ChildCount from './child-count';
+import FuncChild from './child-func';
 
 class App extends Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class App extends Component {
         <Child />
         <PureChild count={Math.floor(this.state.count / 10)} />
         <ChildCount count={this.state.count} />
+        <FuncChild />
         Hello
       </div>
     );
