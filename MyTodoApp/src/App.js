@@ -3,6 +3,7 @@ import moment from 'moment';
 
 import DisplayTime from './components/display-time';
 import SearchBox from './components/search-box';
+import Create from './components/create';
 
 const getCurrentTimeString = () => moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
 
@@ -35,6 +36,9 @@ class App extends Component {
       <div className="App">
         <DisplayTime time={this.state.time} />
         <SearchBox searchText={this.state.searchText} onChange={this.onSearchTextChange} />
+        <Create onSubmit={(text) => {
+          console.log(text);
+        }}/>
       </div>
     );
   }
