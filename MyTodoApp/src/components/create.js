@@ -11,8 +11,10 @@ export default class Create extends React.Component {
 
   render() {
     return (
-      <div>
-        new item: <input
+      <div className="form-group container-fluid row">
+        <input
+          placeholder="new item"
+          className="form-control col-sm-10"
           type="text"
           value={this.state.itemText}
           onChange={(e) => {
@@ -23,13 +25,16 @@ export default class Create extends React.Component {
             })
           }}
         ></input>
-        <button onClick={() => {
-          this.props.onSubmit(this.state.itemText);
+        <button
+          className="col-sm-2 btn btn-primary"
+          onClick={() => {
+            this.props.onSubmit(this.state.itemText);
 
-          this.setState({
-            itemText: '',
-          });
-        }}>Submit</button>
+            this.setState({
+              itemText: '',
+            });
+          }}
+        >Submit</button>
       </div>
     );
   }

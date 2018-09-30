@@ -3,8 +3,9 @@ import React from 'react';
 export default function SearchBox({ searchText, onChange }) {
   return (
     <div>
-      <span>Search</span>
       <input
+        className="form-control"
+        placeholder="Search..."
         value={searchText}
         onChange={(e) => {
           e.preventDefault();
