@@ -1,8 +1,8 @@
 import React from 'react';
 
 export default function({ items, searchText }) {
-  const tbody = items.filter(item => item.text.indexOf(searchText) !== -1).map(item => (
-    <tr key={item.createdAt}>
+  const tbody = items.filter(item => item.text.indexOf(searchText) !== -1).map((item, index) => (
+    <tr key={index}>
       <td>{item.text}</td>
       <td>{item.createdAt}</td>
     </tr>
