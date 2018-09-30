@@ -25,6 +25,10 @@ export default class Create extends React.Component {
         ></input>
         <button onClick={() => {
           this.props.onSubmit(this.state.itemText);
+
+          this.setState({
+            itemText: '',
+          });
         }}>Submit</button>
       </div>
     );

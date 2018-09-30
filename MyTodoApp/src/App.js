@@ -4,6 +4,7 @@ import moment from 'moment';
 import DisplayTime from './components/display-time';
 import SearchBox from './components/search-box';
 import Create from './components/create';
+import ItemList from './components/item-list';
 
 const getCurrentTimeString = () => moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
 
@@ -45,6 +46,7 @@ class App extends Component {
             }],
           });
         }}/>
+        <ItemList items={this.state.items} searchText={this.state.searchText}/>
       </div>
     );
   }
