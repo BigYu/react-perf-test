@@ -11,6 +11,7 @@ class App extends Component {
   state = {
     time: getCurrentTimeString(),
     searchText: '',
+    items: [],
   }
 
   constructor(props) {
@@ -37,7 +38,12 @@ class App extends Component {
         <DisplayTime time={this.state.time} />
         <SearchBox searchText={this.state.searchText} onChange={this.onSearchTextChange} />
         <Create onSubmit={(text) => {
-          console.log(text);
+          this.setState({
+            items: [ ...this.state.items, {
+              text,
+              createdAt: this.state.time,
+            }],
+          });
         }}/>
       </div>
     );
