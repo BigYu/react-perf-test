@@ -24,6 +24,7 @@ class App extends Component {
     super(props);
 
     this.onSearchTextChange = this.onSearchTextChange.bind(this);
+    this.handleCreateSubmit = this.handleCreateSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -38,19 +39,21 @@ class App extends Component {
     })
   }
 
+  handleCreateSubmit(text) {
+    this.setState({
+      items: [ ...this.state.items, {
+        text,
+        createdAt: this.state.time,
+      }],
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <DisplayTime time={this.state.time} />
         <SearchBox searchText={this.state.searchText} onChange={this.onSearchTextChange} />
-        <Create onSubmit={(text) => {
-          this.setState({
-            items: [ ...this.state.items, {
-              text,
-              createdAt: this.state.time,
-            }],
-          });
-        }}/>
+        <Create onSubmit={this.handleCreateSubmit}/>
         <ItemList items={this.state.items} searchText={this.state.searchText}/>
       </div>
     );
