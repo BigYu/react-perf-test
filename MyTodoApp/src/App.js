@@ -6,6 +6,11 @@ import SearchBox from './components/search-box';
 import Create from './components/create';
 import ItemList from './components/item-list';
 
+if (process.env.NODE_ENV !== 'production') {
+  const {whyDidYouUpdate} = require('why-did-you-update');
+  whyDidYouUpdate(React);
+}
+
 const getCurrentTimeString = () => moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
 
 class App extends Component {
