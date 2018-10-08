@@ -1,16 +1,12 @@
 import React from 'react';
 
-export default class Create extends React.Component {
+export default class Create extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
       itemText: '',
     }
-  }
-
-  shouldComponentUpdate() {
-    return false;
   }
 
   render() {

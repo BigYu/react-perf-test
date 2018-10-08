@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class SearchBox extends React.Component {
+export default class SearchBox extends React.PureComponent {
   render() {
     const { searchText, onChange } = this.props;
 
