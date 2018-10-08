@@ -9,6 +9,10 @@ export default class Create extends React.Component {
     }
   }
 
+  shouldComponentUpdate() {
+    return false;
+  }
+
   render() {
     return (
       <div className="form-group container-fluid row">
