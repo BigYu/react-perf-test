@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class DisplayTime extends React.Component {
+export default class DisplayTime extends React.PureComponent {
   render() {
     const { time } = this.props;
 

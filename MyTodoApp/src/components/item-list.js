@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ItemList extends React.Component {
+export default class ItemList extends React.PureComponent {
   render() {
     const { items, searchText } = this.props;
 
